@@ -1,0 +1,19 @@
+register self on server - guest is fine
+display list of other users
+pair users for a game
+
+database:
+User
+    ID
+    IsOnline
+    IsInGame
+
+screens:
+Sign in
+    Form with ID box
+
+Users list
+    Fetch available users
+
+Game screen
+    Show connected user
