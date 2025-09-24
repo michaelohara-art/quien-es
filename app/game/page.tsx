@@ -1,11 +1,11 @@
 import UserDetails from 'Common/user-details';
-import OnlineUsers from './online-users';
+import GameView from './game';
 
-export default async function Lobby() {
+export default async function Game() {
   return (
     <div className="container">
       <UserDetails />
-      <OnlineUsers />
+      <GameView />
     </div>
   );
 }

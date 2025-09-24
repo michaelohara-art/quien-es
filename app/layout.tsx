@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
-import "./styles/_stylesheet.scss";
+import Link from 'next/link';
+import "./_library/styles/_stylesheet.scss";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,6 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable}`}>
         <div className='app-main'>
+          <Link href="/sign-in">SIGN IN</Link>
           {children}
         </div>
       </body>

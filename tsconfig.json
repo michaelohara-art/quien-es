@@ -27,7 +27,13 @@
         "./*"
       ],
       "Actions/*": [
-        "./app/util/actions/*"
+        "./app/_library/actions/*"
+      ],
+      "Data/*": [
+        "./app/_library/data/*"
+      ],
+      "Common/*": [
+        "./app/_library/common/*"
       ]
     }
   },
