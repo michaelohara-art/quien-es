@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from 'react';
+import { Suspense, useState } from 'react';
 import { fetchImageSet } from 'Data/data';
 import { ImageSet } from 'Data/entities';
+import Loading from 'Common/loading';
 import UserDetails from 'Common/user-details';
 import OnlineUsers from './online-users';
 import ImageSetSelector from './image-set-selector';
@@ -19,9 +20,11 @@ export default function Lobby() {
 
   return (
     <div className="container">
-      <UserDetails />
-      <ImageSetSelector onSelected={onSetSelected} />
-      <OnlineUsers imageSet={selectedSet} />
+      <Suspense fallback={<Loading />}>
+        <UserDetails />
+        <ImageSetSelector onSelected={onSetSelected} />
+        <OnlineUsers imageSet={selectedSet} />
+      </Suspense>
     </div>
   );
 }

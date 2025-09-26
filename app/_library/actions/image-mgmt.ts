@@ -4,9 +4,7 @@
 import { v2 as cloudinary } from 'cloudinary';
 
 const config = {
-    cloud_name: 'dllykhyrw',
-    api_key: '329649823973448',
-    api_secret: 'Djdx57UYNatwnu4Oh0x65tuLC18'
+    cloud_name: 'dllykhyrw'
 };
 
 cloudinary.config(config);

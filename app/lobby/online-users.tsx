@@ -21,7 +21,7 @@ export default function OnlineUsers({ imageSet }: { imageSet: ImageSet }) {
             const intervalId = setInterval(async () => {
                 if (shouldClear) clearInterval(intervalId);
 
-                let fetchedUsers = await fetchOnlineUsers(userName);
+                const fetchedUsers = await fetchOnlineUsers(userName);
                 fetchedUsers.sort((a, b) => a.name.localeCompare(b.name));
                 setOnlineUsers(fetchedUsers);
 

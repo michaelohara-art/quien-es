@@ -1,11 +1,11 @@
-export default function shuffle(array: Array<any>) {
+export default function shuffle(array: Array<unknown>) {
     let currentIndex = array.length;
 
     // While there remain elements to shuffle...
     while (currentIndex != 0) {
 
         // Pick a remaining element...
-        let randomIndex = Math.floor(Math.random() * currentIndex);
+        const randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex--;
 
         // And swap it with the current element.

@@ -147,7 +147,7 @@ export async function createGame(host: string, opponent: string, imageSetId: str
     const imgs = shuffle(imageSet.images.map(i => i.url));
 
     const panels = Array<Panel>();
-    let toAssign = [host, opponent];
+    const toAssign = [host, opponent];
     for (let i = 0; i < panelCount; i++) {
         panels.push({
             id: crypto.randomUUID(),
