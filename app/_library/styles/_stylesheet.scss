@@ -7,6 +7,10 @@
     align-items: center;
 }
 
+.flex {
+    @include flex();
+}
+
 .container {
     margin: 10px;
     padding: 10px;
@@ -35,7 +39,7 @@
     }
 }
 
-input {
+input:not([type='file']) {
     padding-left: 10px;
 }
 
@@ -45,6 +49,7 @@ input {
 }
 
 .panel-container {
+    margin-top: 20px;
     @include flex(space-between);
     flex-wrap: wrap;
 }
@@ -56,8 +61,31 @@ input {
     margin-bottom: 20px;
     border: 1px solid white;
 
+    img {
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+    }
+
     &.is-mine {
-        border-color: blue;
+        border-color: yellow;
+    }
+
+    &.is-theirs {
+        border-color: magenta;
+    }
+
+    &.my-selection {
+        box-shadow: inset 0px 0px 15px 5px yellow;
+    }
+
+    &.their-selection {
+        box-shadow: inset 0px 0px 15px 5px magenta;
+    }
+
+    &.both-selection {
+        box-shadow: inset 0px 0px 15px 5px yellow, 0px 0px 15px 5px magenta;
+        // background: radial-gradient(blue, purple);
     }
 
     &:hover {

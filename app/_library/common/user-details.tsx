@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState } from "react";
 import { useSearchParams, redirect } from "next/navigation";
+import Link from 'next/link';
 import { updateLastOnline } from "Data/data";
 import { User } from "Data/entities";
 import Loading from "Common/loading";
@@ -30,6 +31,11 @@ export default function UserDetails() {
         return <Loading />
 
     return <div>
+        <div>
+            <Link href={`/lobby?name=${userName}`}>LOBBY</Link>
+            <span> | </span>
+            <Link href={`/image-sets?name=${userName}`}>IMAGES</Link>
+        </div>
         <div>hello {user.name}</div>
     </div>
 }

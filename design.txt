@@ -1,19 +1,10 @@
-register self on server - guest is fine
-display list of other users
-pair users for a game
+MVP:
+has images
+highlighting is clearer and gamier
+win notation is clearer and gamier
+indication player has left and option to leave
 
-database:
-User
-    ID
-    IsOnline
-    IsInGame
-
-screens:
-Sign in
-    Form with ID box
-
-Users list
-    Fetch available users
-
-Game screen
-    Show connected user
+provide a default image set
+enable uploading sets of images for use in games
+host selects image set on game start
+enable sharing access to image sets to other users

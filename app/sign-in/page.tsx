@@ -5,7 +5,7 @@ export default function Home() {
 
   return (
     <div className="container">
-      <Form action={signIn} className='flex'>
+      <Form action={signIn}>
         <input className='form-control' name="name" placeholder='User ID' />
         <button className='form-control' type="submit">Join Lobby</button>
       </Form>

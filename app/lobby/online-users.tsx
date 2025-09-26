@@ -4,10 +4,10 @@ import { UUID } from "crypto";
 import { useEffect, useState } from "react";
 import { useSearchParams, redirect } from "next/navigation";
 import { createGame, fetchOnlineUsers, } from "Data/data";
-import { OnlineUser } from "Data/entities";
+import { ImageSet, OnlineUser } from "Data/entities";
 import Loading from "Common/loading";
 
-export default function OnlineUsers() {
+export default function OnlineUsers({ imageSet }: { imageSet: ImageSet }) {
     const params = useSearchParams();
     const userName = params.get('name') as string;
     if (!userName)
@@ -32,8 +32,9 @@ export default function OnlineUsers() {
 
     function startGame(onlineUserName: string) {
         (async () => {
-            const gameId = await createGame(userName, onlineUserName);
-            redirect(`/game?name=${userName}&id=${gameId}`);
+            const gameId = await createGame(userName, onlineUserName, imageSet.id);
+            // TODO at this point we add global state management right?
+            redirect(`/game?name=${userName}&id=${gameId}&setId=${imageSet.id}`);
         })();
     }
 

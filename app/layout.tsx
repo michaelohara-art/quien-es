@@ -23,6 +23,9 @@ export default function RootLayout({
       <body className={`${geistSans.variable}`}>
         <div className='app-main'>
           <Link href="/sign-in">SIGN IN</Link>
+          {/* disabled to avoid deleting all the image links! */}
+          {/* <span> | </span>
+          <Link href="/dev">DEV</Link> */}
           {children}
         </div>
       </body>
